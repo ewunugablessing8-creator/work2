@@ -1,0 +1,47 @@
+.auth-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+    height: 80%;
+    background-color: rgba(42, 150, 245, 0.3);
+    border-radius: 24px;
+    border: 2px solid rgb(134, 134, 134, 0.3);
+}
+
+.auth-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input{
+    padding: 15px 20px;
+    border-radius: 18px;
+    border: 1px solid rgb(160, 158, 158, 0.5);
+}
+
+button{
+    width: 120px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    border: none;
+    border-radius: 18px;
+}
+
+label{
+    font-size: 18px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
