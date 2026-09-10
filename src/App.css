@@ -11,17 +11,4 @@
   justify-content: center;
   padding: 20px;
 }
-.footer{
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  margin-top: auto;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  background-color: black;
-  color: white;
-  font-size: 16px;
-  letter-spacing: 3px;
-}
+
