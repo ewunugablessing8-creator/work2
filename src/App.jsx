@@ -1,30 +1,39 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 import Signup from "./pages/Signup";
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Settings from './pages/Settings';
-import "./App.css";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
+import CreateProduct from "./pages/CreateProduct";
+import Product from "./pages/Product";
+
+import "./index.css";
 
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Navigate to="/dashboard" replace /> : children;
- };
+
+  return isAuthenticated ? (
+    <Navigate to="/dashboard" replace />
+  ) : (
+    children
+  );
+};
 
 function App() {
   return (
     <AuthProvider>
-      {/* <h1>Welcome to the App</h1> */}
-         <Routes>
+      <Routes>
         <Route
           path="/signup"
           element={
             <PublicRoute>
               <Signup />
             </PublicRoute>
-          } 
-        /> 
+          }
+        />
+
         <Route
           path="/login"
           element={
@@ -33,6 +42,7 @@ function App() {
             </PublicRoute>
           }
         />
+
         <Route
           path="/dashboard"
           element={
@@ -41,6 +51,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/products"
+          element={
+            <ProtectedRoute>
+              <Product />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/products/create"
           element={
@@ -49,14 +69,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/product"
-          element={
-            <ProtectedRoute>
-              <Product/>
-            </ProtectedRoute>
-          }
-        />
+
         <Route
           path="/settings"
           element={
@@ -65,9 +78,10 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
-       </Routes>
+      </Routes>
     </AuthProvider>
   );
 }

@@ -1,0 +1,114 @@
+.create-product-page {
+  max-width: 520px;
+  margin: 48px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  color: #111827;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.back-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+}
+
+.product-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-form input,
+.product-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.product-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.product-form input::placeholder,
+.product-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgb(13 148 136 / 15%);
+}
+
+.product-form button[type="submit"] {
+  margin-top: 6px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-form button[type="submit"]:hover:not(:disabled) {
+  background: #115e59;
+}
+
+.product-form button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+@media (max-width: 600px) {
+  .create-product-page {
+    margin: 28px auto;
+  }
+
+  .form-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
