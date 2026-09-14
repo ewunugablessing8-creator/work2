@@ -79,9 +79,9 @@
   box-shadow: 0 0 0 3px rgb(13 148 136 / 15%);
 }
 
-.product-form button[type="submit"] {
+.product-form button{
   margin-top: 6px;
-  padding: 13px 18px;
+  padding: 13px 25px;
   border: 0;
   border-radius: 8px;
   background: #0f766e;
@@ -92,11 +92,11 @@
   transition: background 0.2s;
 }
 
-.product-form button[type="submit"]:hover:not(:disabled) {
+.product-form button:hover:not(:disabled) {
   background: #115e59;
 }
 
-.product-form button[type="submit"]:disabled {
+.product-form button:disabled {
   cursor: not-allowed;
   opacity: 0.65;
 }

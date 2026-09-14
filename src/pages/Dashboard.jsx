@@ -13,15 +13,20 @@ const Dashboard = () => {
         <div className="header-links">
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/settings">Settings</Link>
+            <Link to="/products">products</Link>
         </div>
         <button onClick={logout}>Logout</button>
      </div>
 
      <div className="dashboard-body">
-      <div className="dashboard-content">
+      <div className="trr">
+        <div className="dashboard-content">
         <h3>Welcome back, {user?.name}</h3>
         <p>Here's an overview of your account.</p>
       </div>
+      <button><Link to="/products/create" className="btn-primary">Add Product</Link></button>
+      </div>
+      
 
       <div className="dashboard-info">
       <div className="info-item">
