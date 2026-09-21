@@ -6,19 +6,16 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Settings from "./pages/Settings";
+import Products from "./pages/Products";
 import CreateProduct from "./pages/CreateProduct";
-import Product from "./pages/Product";
+import EditProduct from "./pages/EditProduct";
 
 import "./index.css";
 
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
-  return isAuthenticated ? (
-    <Navigate to="/dashboard" replace />
-  ) : (
-    children
-  );
+  return isAuthenticated ? <Navigate to="/dashboard" replace /> : children;
 };
 
 function App() {
@@ -56,7 +53,7 @@ function App() {
           path="/products"
           element={
             <ProtectedRoute>
-              <Product />
+              <Products />
             </ProtectedRoute>
           }
         />
@@ -66,6 +63,15 @@ function App() {
           element={
             <ProtectedRoute>
               <CreateProduct />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/products/:id/edit"
+          element={
+            <ProtectedRoute>
+              <EditProduct />
             </ProtectedRoute>
           }
         />
