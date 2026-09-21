@@ -6,9 +6,10 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Settings from "./pages/Settings";
-import Products from "./pages/Products";
+import Products from "./pages/Product";
 import CreateProduct from "./pages/CreateProduct";
 import EditProduct from "./pages/EditProduct";
+import MyProducts from "./pages/MyProducts";
 
 import "./index.css";
 
@@ -53,7 +54,7 @@ function App() {
           path="/products"
           element={
             <ProtectedRoute>
-              <Products />
+              <MyProducts />
             </ProtectedRoute>
           }
         />
@@ -68,7 +69,7 @@ function App() {
         />
 
         <Route
-          path="/products/:id/edit"
+          path="/product/edit/:id"
           element={
             <ProtectedRoute>
               <EditProduct />

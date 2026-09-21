@@ -24,7 +24,6 @@ const Dashboard = () => {
         <h3>Welcome back, {user?.name}</h3>
         <p>Here's an overview of your account.</p>
       </div>
-      <button><Link to="/products/create" className="btn-primary">Add Product</Link></button>
       </div>
       
 

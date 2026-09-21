@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Product.css";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -20,9 +21,9 @@ function Products() {
         const token = localStorage.getItem("token");
 
         const res = await fetch(`${API_URL}/api/products/my`, {
-             headers: {
-                   Authorization: `Bearer ${token}`,
-                 },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
 
         if (!res.ok) {
@@ -78,10 +79,6 @@ function Products() {
           {products.length === 0 ? (
             <div className="empty-state">
               <p>No products found. Add your first product!</p>
-
-              <Link to="/products/create" className="btn-primary">
-                Add Product
-              </Link>
             </div>
           ) : (
             products.map((product) => (
@@ -110,7 +107,7 @@ function Products() {
                   </p>
 
                   <Link
-                    to={`/products/${product._id}/edit`}
+                    to={`/product/edit/${product._id}`}
                     className="btn-secondary"
                   >
                     Edit
