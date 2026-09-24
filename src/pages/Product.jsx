@@ -88,6 +88,9 @@ function Products() {
           <Link to="/my-products" className="nav-link">
             My Products
           </Link>
+          <Link to="/cart" className="nav-link">
+            Cart
+          </Link>
           <Link to="/products/create" className="btn-primary">
             + Add Product
           </Link>

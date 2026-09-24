@@ -101,6 +101,10 @@ function MyProducts() {
             Products
           </Link>
 
+          <Link to="/cart" className="nav-link">
+                      Cart
+          </Link>
+
 
           <Link to="/my-products" className="nav-link active">
             My Products
