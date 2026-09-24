@@ -8,6 +8,8 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [deletingId, setDeletingId] = useState('');
+  const [addingId, setAddingId] = useState('');
   const navigate = useNavigate();
 
   const logout = () => {
@@ -39,8 +41,31 @@ function Products() {
       }
     };
 
+   
     fetchProducts();
   }, []);
+
+   const handleAddToCart = async (productId) => {
+      setAddingId(productId);
+      setError('');
+
+      try {
+        await axios.post(`${API_URL}/api/cart/items`,
+          { productId, qty: 1 },
+          {
+            headers:{
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+
+            },
+          }
+        );
+      }  catch (err) {
+        setError(err.message || "Failed to add cart");
+      } finally {
+        setAddingId(null);
+      }
+    };
+
 
   if (loading) return <div className="loading">Loading products...</div>;
   if (error) return <div className="error-message">Error: {error}</div>;
@@ -118,6 +143,15 @@ function Products() {
                   >
                     Edit
                   </Link>
+                  <button className="btn-add"
+                  disabled={product.stock < 1 || addingId === product._id}
+                   onClick={() => handleAddToCart(product._id)}>
+                    {product.stock < 1
+                    ? 'Out of stock'
+                    : addingId === product._id
+                    ? 'Adding...'
+                    : 'Add to Cart'}
+                   </button>
                 </div>
               </div>
             ))

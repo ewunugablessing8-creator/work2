@@ -192,6 +192,16 @@ function MyProducts() {
                     >
                       {deletingId === product._id ? "Deleting..." : "Delete"}
                     </button>
+
+                     <button className="btn-add"
+                     disabled={product.stock < 1 || addingId === product._id}
+                     onClick={() => handleAddToCart(product._id)}>
+                    {product.stock < 1
+                    ? 'Out of stock'
+                    : addingId === product._id
+                    ? 'Adding...'
+                    : 'Add to Cart'}
+                   </button>
                   </div>
                 </div>
               </article>

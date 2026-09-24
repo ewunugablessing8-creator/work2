@@ -10,6 +10,7 @@ import Products from "./pages/Product";
 import CreateProduct from "./pages/CreateProduct";
 import EditProduct from "./pages/EditProduct";
 import MyProducts from "./pages/MyProducts";
+import Cart from "./pages/Cart";
 
 import "./index.css";
 
@@ -82,6 +83,15 @@ function App() {
           element={
             <ProtectedRoute>
               <EditProduct />
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart/>
             </ProtectedRoute>
           }
         />
