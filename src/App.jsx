@@ -54,6 +54,15 @@ function App() {
           path="/products"
           element={
             <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-products"
+          element={
+            <ProtectedRoute>
               <MyProducts />
             </ProtectedRoute>
           }

@@ -20,7 +20,7 @@ function Products() {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch(`${API_URL}/api/products/my`, {
+        const res = await fetch(`${API_URL}/api/products`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -59,6 +59,12 @@ function Products() {
           </Link>
           <Link to="/settings" className="nav-link">
             Settings
+          </Link>
+          <Link to="/my-products" className="nav-link">
+            My Products
+          </Link>
+          <Link to="/products/create" className="btn-primary">
+            + Add Product
           </Link>
           <button onClick={logout} className="btn-outline">
             Logout

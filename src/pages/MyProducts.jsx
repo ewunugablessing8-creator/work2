@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Products.css";
+import "./Product.css";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -96,7 +96,13 @@ function MyProducts() {
             Dashboard
           </Link>
 
+          
           <Link to="/products" className="nav-link active">
+            Products
+          </Link>
+
+
+          <Link to="/my-products" className="nav-link active">
             My Products
           </Link>
 
@@ -171,7 +177,7 @@ function MyProducts() {
 
                   <div className="product-actions">
                     <Link
-                      to={`/products/${product._id}/edit`}
+                      to={`/product/edit/${product._id}`}
                       className="btn-secondary"
                     >
                       Edit

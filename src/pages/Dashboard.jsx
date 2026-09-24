@@ -14,6 +14,7 @@ const Dashboard = () => {
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/settings">Settings</Link>
             <Link to="/products">products</Link>
+            <Link to="/my-products">My Products</Link>
         </div>
         <button onClick={logout}>Logout</button>
      </div>
